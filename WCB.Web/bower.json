@@ -1,0 +1,10 @@
+{
+    "name": "WCB.Web",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "^3.3.4",
+        "jquery": ""
+    },
+    "exportsOverride": {
+    }
+}

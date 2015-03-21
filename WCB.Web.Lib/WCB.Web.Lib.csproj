@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Domain\BurnerControllerApi.cs" />
     <Compile Include="Domain\ControllerCard.cs" />
+    <Compile Include="Domain\IHubMessage.cs" />
     <Compile Include="Domain\IScrewHub.cs" />
     <Compile Include="Domain\Messages\SetScrew.cs" />
     <Compile Include="Domain\Process.cs" />

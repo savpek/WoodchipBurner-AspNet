@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WCB.Web.Domain.Messages
+namespace WCB.Web.Lib.Domain.Messages
 {
     public class SetScrew : IObservable<SetScrew>
     {

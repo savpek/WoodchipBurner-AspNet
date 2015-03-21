@@ -2,6 +2,7 @@
 using System.Reactive.Linq;
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
+using WCB.Web.Lib;
 
 namespace WCB.Web
 {

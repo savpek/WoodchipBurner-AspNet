@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "bin": {
+        "assembly": "../../../../../.k/packages/Microsoft.AspNet.SignalR.Server/3.0.0-beta3/lib/aspnet50/Microsoft.AspNet.SignalR.Server.dll"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../WCB.Web.Lib/WCB.Web.Lib.csproj",
+      "bin": {
+        "assembly": "../../WCB.Web.Lib/obj/{configuration}/WCB.Web.Lib.dll",
+        "pdb": "../../WCB.Web.Lib/obj/{configuration}/WCB.Web.Lib.pdb"
+      },
+      "dependencies": {
+        "FluentAssertions": "3.3.0",
+        "NSubstitute": "1.8.1.0",
+        "NUnit": "2.6.4",
+        "System.Reactive.Linq": "1.0.0-*",
+        "Microsoft.AspNet.SignalR.Server": "1.0.0-*"
+      }
+    }
+  }
+}

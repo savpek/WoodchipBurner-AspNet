@@ -6,9 +6,15 @@
         "Microsoft.AspNet.Mvc": "6.0.0-beta3",
         "Rx-Main": "2.2.5",
         "Microsoft.AspNet.SignalR.Server": "3.0.0-*",
+        "FluentAssertions": "3.3.0",
+        "NSubstitute": "1.8.1",
+        "xunit": "2.0.0-rc4-build2924",
+        "xunit.runner.visualstudio": "2.0.0-rc4-build1049",
+        "WCB.Web.Lib": "1.0.0-*"
     },
     "frameworks": {
-        "aspnet50": { }
+        "aspnet50": {
+        }
     },
     "bundleExclude": [
         "node_modules",
@@ -21,5 +27,8 @@
         "wwwroot",
         "node_modules",
         "bower_components"
-    ]
+    ],
+    "commands": {
+        "test": "xunit.runner.aspnet"
+    }
 }

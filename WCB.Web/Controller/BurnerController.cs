@@ -1,8 +1,7 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.AspNet.SignalR.Infrastructure;
+using WCB.Web.Lib.Domain;
 
 namespace WCB.Web.Controller
 {
@@ -12,7 +11,7 @@ namespace WCB.Web.Controller
 
         public BurnerController(IConnectionManager connectionManager)
         {
-            _hub = connectionManager.GetHubContext<TestHub>();
+            _hub = connectionManager.GetHubContext<ScrewHub>();
         }
 
         [HttpGet("burner/screw/delay")]
@@ -24,9 +23,5 @@ namespace WCB.Web.Controller
         public void SetScrewDelay(uint valueSeconds)
         {
         }
-    }
-
-    public class TestHub : Hub
-    {
     }
 }

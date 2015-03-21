@@ -1,4 +1,4 @@
-﻿namespace WCB.Web.Domain
+﻿namespace WCB.Web.Lib.Domain
 {
     public class SensorValue
     {
@@ -7,7 +7,7 @@
             Value = value;
         }
 
-        public int Value { get; private set; }
+        public int Value { get; }
 
         public static implicit operator int (SensorValue value)
         {

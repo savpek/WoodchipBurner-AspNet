@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive;
 
-namespace WCB.Web
+namespace WCB.Web.Lib
 {
-    public class Screw : IObserver<>, IObserver<Timestamped<long>>
+    public class Screw : IObserver<string>, IObserver<Timestamped<long>>
     {
         public int TickCount { get; set; }
 

@@ -1,0 +1,25 @@
+﻿body {
+    background: url('/images/bg_000.jpg') no-repeat center center fixed;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+div .middle {
+    width: 70%;
+    min-height: 30em;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 20px 5px #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto';
+}
+p, div {
+    font-family: 'Roboto';
+}
+
+.panel-heading {
+    font-weight: bolder
+}

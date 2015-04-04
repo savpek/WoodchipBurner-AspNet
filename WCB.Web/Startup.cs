@@ -11,12 +11,14 @@ namespace WCB.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseSignalR();
+            app.UseMvc();
             var screw = new Screw();
-
             var observable = Observable.Interval(TimeSpan.FromSeconds(3)).Timestamp();
             observable.Subscribe(screw);
         }

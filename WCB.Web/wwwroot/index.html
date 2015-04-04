@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myNoteApp">
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <title>WCB</title>
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="myNoteCtrl">
+<body ng-controller="controlsController">
 <div class="container">
     <div class="middle panel panel-success">
         <div class="panel-heading"><i class="fa fa-cogs fa-lg"></i> Hallinta ja tila</div>
@@ -17,36 +17,36 @@
                 <div class="form-group row">
                     <label for="inputDelay" class="col-sm-3">Viive (Sekunttia)</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-5" id="inputDelay" placeholder="" ng-bind="delay">
+                        <input type="number" class="form-control col-md-5" id="inputDelay" placeholder="" ng-model="delay.new">
                     </div>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-3" placeholder="0" ng-bind="" disabled>
+                        <input type="number" class="form-control col-md-3" placeholder="0" disabled ng-model="delay.current">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputWorkPeriod" class="col-sm-3">Syöttö (Sekunttia)</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-5" id="inputWorkPeriod" placeholder="" ng-bind="workPeriod">
+                        <input type="number" class="form-control col-md-5" id="inputWorkPeriod" placeholder="" ng-model="workPeriod.new">
                     </div>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-3" placeholder="0" ng-bind="" disabled>
+                        <input type="number" class="form-control col-md-3" placeholder="0" ng-bind="" disabled ng-model="workPeriod.current">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputBrightnessLimit" class="col-sm-3">Vahti (Prosenttia)</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-5" id="inputBrightnessLimit" placeholder="" ng-bind="brightnessLimit">
+                        <input type="number" class="form-control col-md-5" id="inputBrightnessLimit" placeholder="" ng-model="brightnessLimit.new">
                     </div>
                     <div class="col-md-2">
-                        <input type="number" class="form-control col-md-3" placeholder="0" ng-bind="" disabled>
+                        <input type="number" class="form-control col-md-3" placeholder="0" disabled ng-model="brightnessLimit.current">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                         <button type="submit" class="btn btn-primary">Aseta</button>
                     </div>
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-primary" data-toggle="button">Päälle</button>
+                        <button type="button" class="btn btn-primary" data-toggle="button">Päälle / Pois päältä</button>
                     </div>
                 </div>
             </form>
@@ -54,6 +54,7 @@
     </div>
 </div>
 <script src="bower_concat.js"></script>
+<script src='/signalr/js'></script>
 <script src="app/app.js"></script>
 </body>
 </html>

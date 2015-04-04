@@ -14,7 +14,11 @@
             },
             bower: {
                 files: {
-                    "wwwroot/bower_concat.js": ["bower_components/jquery/dist/jquery.js","bower_components/angular/angular.js", "bower_components/bootstrap/dist/js/bootstrap.js"],
+                    "wwwroot/bower_concat.js": [
+                        "bower_components/jquery/dist/jquery.js",
+                        "bower_components/angular/angular.js",
+                        "bower_components/bootstrap/dist/js/bootstrap.js",
+                        "bower_components/signalr/jquery.signalR.js"],
                     "wwwroot/bower_concat.css": ["bower_components/**/*.css", "!bower_components/**/*.min.css"]
                 },
                 nonull: true

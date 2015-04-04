@@ -1,46 +1,34 @@
-using System;
-using System.Reactive;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Infrastructure;
 
 namespace WCB.Web.Lib.Domain
 {
-    public class DelayHub : Hub
-    {
-    }
-
-    public class ScrewHub : Hub, IObserver<Screw>, IScrewHub, IObserver<Timestamped<long>>
+    public class ScrewHub : Hub, IScrewHub
     {
         private readonly IHubContext _hubContext;
+        private uint _delay = 3;
+        private uint _workPeriod;
 
-        public ScrewHub(IHubContext hubContext)
+        public ScrewHub(IConnectionManager hubContext)
         {
-            _hubContext = hubContext;
+            _hubContext = hubContext.GetHubContext<ScrewHub>();
         }
 
-        public ScrewHub()
+        public void SetDelay(uint newDelaySec)
         {
+            _delay = newDelaySec;
+            _hubContext.Clients.All.message("delay", _delay);
+        }
+
+        public void SetWorkPeriod(uint valueSec)
+        {
+            _workPeriod = valueSec;
+            _hubContext.Clients.All.message("workPeriod", _workPeriod);
         }
 
         public void ScrewState(State state)
         {
             _hubContext.Clients.All.message("screwState", state.ToString());
-        }
-
-        public void OnNext(Screw value)
-        {
-        }
-
-        public void OnNext(Timestamped<long> value)
-        {
-            _hubContext.Clients.All.message("currentDelay", DateTime.Now.Second);
-        }
-
-        public void OnError(Exception error)
-        {
-        }
-
-        public void OnCompleted()
-        {
         }
     }
 }

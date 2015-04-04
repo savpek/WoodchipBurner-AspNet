@@ -27,7 +27,7 @@ namespace WCB.Web.Lib.Domain
             _hubContext = Substitute.For<IHubContext>();
             _client = Substitute.For<IHubMessage>();
             SubstituteExtensions.Returns(_hubContext.Clients.All, _client);
-            _hub = new ScrewHub(_hubContext);
+            _hub = new ScrewHub(null);
         }
 
         [Test]

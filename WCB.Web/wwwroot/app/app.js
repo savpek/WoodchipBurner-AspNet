@@ -15,7 +15,7 @@ app.controller("controlsController", function ($scope, $rootScope) {
         new: 3
     };
     // Declare a proxy to reference the hub. 
-    var hub = $.connection.delayHub;
+    var hub = $.connection.screwHub;
     
     $.connection.hub.start().done(function (msg) {
         console.log(msg);
@@ -24,7 +24,14 @@ app.controller("controlsController", function ($scope, $rootScope) {
         console.log(msg);
     });
 
-    hub.client.message = function(msg) {
-        console.log(msg);
+    hub.client.message = function (type, value) {
+        if (type === "delay") {
+            $scope.delay.current = value;
+        }
+        $rootScope.$apply();
     };
+
+    $scope.setNewValues = function () {
+        hub.server.setDelay($scope.delay.new);
+    }
 });

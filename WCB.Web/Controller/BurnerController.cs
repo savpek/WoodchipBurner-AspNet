@@ -13,7 +13,7 @@ namespace WCB.Web.Controller
 
         public BurnerController(IConnectionManager connectionManager)
         {
-            _hub = connectionManager.GetHubContext<DelayHub>();
+            _hub = connectionManager.GetHubContext<ScrewHub>();
         }
 
         [HttpGet("burner/delay")]

@@ -1,6 +1,6 @@
 using System;
 
-namespace WCB.Web.Lib.Messaging
+namespace WCB.Web.Messaging
 {
     public interface IMessagePublisher
     {

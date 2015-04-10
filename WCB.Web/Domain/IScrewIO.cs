@@ -1,6 +1,4 @@
-﻿using System.Reactive.Subjects;
-
-namespace WCB.Web.Lib.Domain
+﻿namespace WCB.Web.Domain
 {
     public interface IScrewIO
     {

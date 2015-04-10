@@ -1,6 +1,4 @@
-﻿using System.Security.Policy;
-
-namespace WCB.Web.Lib.Domain
+﻿namespace WCB.Web.Domain
 {
     public class ControllerCard : IScrewIO, ISensor, IAir
     {

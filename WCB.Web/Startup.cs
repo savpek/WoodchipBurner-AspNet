@@ -3,9 +3,9 @@ using System.Reactive.Linq;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Framework.DependencyInjection;
-using WCB.Web.Lib.Domain;
-using WCB.Web.Lib.Domain.Messages;
-using WCB.Web.Lib.Messaging;
+using WCB.Web.Domain;
+using WCB.Web.Domain.Messages;
+using WCB.Web.Messaging;
 
 namespace WCB.Web
 {

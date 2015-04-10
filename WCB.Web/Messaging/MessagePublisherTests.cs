@@ -1,21 +1,19 @@
 ﻿using System;
 using FluentAssertions;
-using NUnit.Framework;
+using Xunit;
 
-namespace WCB.Web.Lib.Messaging
+namespace WCB.Web.Messaging
 {
-    [TestFixture]
     public class MessagePublisherTests
     {
-        [SetUp]
-        public void Init() { }
+        public MessagePublisherTests() { }
 
         private class SampleEvent
         {
             public string SomeString => "Bar";
         }
 
-        [Test]
+        [Fact]
         public void OnSubscribeEverythingWorksAsExpected()
         {
             bool eventWasRaised = false;
@@ -28,7 +26,7 @@ namespace WCB.Web.Lib.Messaging
             eventWasRaised.Should().BeTrue();
         }
 
-        [Test]
+        [Fact]
         public void OnUnsubscribeEverythingWorksAsExpected()
         {
             bool eventWasRaised = false;

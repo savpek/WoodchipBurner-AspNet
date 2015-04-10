@@ -1,32 +1,28 @@
 using System;
-using System.Reactive;
 using FluentAssertions;
 using NSubstitute;
-using NUnit.Framework;
-using WCB.Web.Lib.Domain.Messages;
-using WCB.Web.Lib.Messaging;
+using WCB.Web.Domain.Messages;
+using WCB.Web.Messaging;
+using Xunit;
 
-namespace WCB.Web.Lib.Domain
+namespace WCB.Web.Domain
 {
-    [TestFixture]
     public class ScrewTests
     {
-        private IScrewIO _io;
         private ScrewAndAir _screwAndAir;
         private State _currentState = State.Disabled;
         private MessagePublisher _publisher;
 
-        [SetUp]
-        public void Init()
+        public ScrewTests()
         {
-            _io = Substitute.For<IScrewIO>();
-            _io.When(x => x.SetScrew(Arg.Any<State>())).Do(x => _currentState = x.Arg<State>());
+            var io = Substitute.For<IScrewIO>();
+            io.When(x => x.SetScrew(Arg.Any<State>())).Do(x => _currentState = x.Arg<State>());
 
             _publisher = new MessagePublisher();
-            _screwAndAir = new ScrewAndAir(_io, _publisher);
+            _screwAndAir = new ScrewAndAir(io, _publisher);
         }
 
-        [Test]
+        [Fact]
         public void SettingsUpdated_ResetSequence()
         {
             var settings = new CurrentSettings
@@ -39,7 +35,7 @@ namespace WCB.Web.Lib.Domain
             _currentState.Should().Be(State.Enabled);
         }
 
-        [Test]
+        [Fact]
         public void CommonEnabledSequence()
         {
             var settings = new CurrentSettings

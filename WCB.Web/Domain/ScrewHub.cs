@@ -2,10 +2,10 @@ using System;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.AspNet.SignalR.Infrastructure;
-using WCB.Web.Lib.Domain.Messages;
-using WCB.Web.Lib.Messaging;
+using WCB.Web.Domain.Messages;
+using WCB.Web.Messaging;
 
-namespace WCB.Web.Lib.Domain
+namespace WCB.Web.Domain
 {
     [HubName("screwHub")]
     public class ScrewHub : Hub
@@ -26,7 +26,7 @@ namespace WCB.Web.Lib.Domain
                     _hubContext.Clients.All.message("settingsUpdated", x);
                     _settings = new CurrentSettings(x.Settings);
                 });
-
+                
             _publisher.GetEvent<SensorMessage>()
                 .Subscribe(x =>
                 {

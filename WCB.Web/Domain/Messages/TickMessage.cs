@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WCB.Web.Lib.Domain.Messages
+namespace WCB.Web.Domain.Messages
 {
     public class TickMessage
     {

@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
-namespace WCB.Web.Lib.Messaging
+namespace WCB.Web.Messaging
 {
     public class MessagePublisher : IMessagePublisher
     {

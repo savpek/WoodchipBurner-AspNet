@@ -19,19 +19,19 @@ app.controller("controlsController", function ($scope, $rootScope) {
     
     $.connection.hub.start().done(function (msg) {
         console.log(msg);
-
-        hub.client.message = function (type, value) {
-            if (type === "settingsUpdated") {
-                $scope.delay.current = value.delay;
-                $scope.workPeriod.current = value.workPeriod;
-                $scope.brightnessLimit.current = value.sensorMinimumLimit;
-            }
-            $rootScope.$apply();
-        };
     })
     .fail(function(msg) {
         console.log(msg);
     });
+
+    hub.client.message = function (type, value) {
+        if (type === "settingsUpdated") {
+            $scope.delay.current = value.delay;
+            $scope.workPeriod.current = value.workPeriod;
+            $scope.brightnessLimit.current = value.sensorMinimumLimit;
+        }
+        $rootScope.$apply();
+    };
 
     $scope.setNewValues = function () {
         hub.server.updateSettings({

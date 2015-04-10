@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace WCB.Web.Lib.Domain
+namespace WCB.Web.Domain
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public interface IHubMessage

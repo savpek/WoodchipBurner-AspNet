@@ -1,8 +1,8 @@
 ﻿using System;
-using WCB.Web.Lib.Domain.Messages;
-using WCB.Web.Lib.Messaging;
+using WCB.Web.Domain.Messages;
+using WCB.Web.Messaging;
 
-namespace WCB.Web.Lib.Domain
+namespace WCB.Web.Domain
 {
     public class ScrewAndAir
     {

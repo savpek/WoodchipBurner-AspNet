@@ -12,7 +12,20 @@
         "NSubstitute": "1.8.1.0",
         "NUnit": "2.6.4",
         "System.Reactive.Linq": "1.0.0-*",
-        "Microsoft.AspNet.SignalR.Server": "1.0.0-*"
+        "Microsoft.AspNet.SignalR.Server": "1.0.0-*",
+        "System.Reactive.Interfaces": "1.0.0-*",
+        "Rx-Core": "2.2.5",
+        "Rx-Interfaces": "2.2.5",
+        "Rx-Linq": "2.2.5",
+        "Rx-Main": "2.2.5",
+        "Rx-PlatformServices": "2.2.5",
+        "Rx-Testing": "2.2.5",
+        "Microsoft.VisualStudio.QualityTools.UnitTestFramework": "1.0.0-*",
+        "Microsoft.AspNet.SignalR.Core": "2.2.0",
+        "Microsoft.Owin": "2.1.0",
+        "Microsoft.Owin.Security": "2.1.0",
+        "Newtonsoft.Json": "6.0.4",
+        "Owin": "1.0"
       }
     }
   }

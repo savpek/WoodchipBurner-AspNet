@@ -1,34 +1,56 @@
+using System;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.AspNet.SignalR.Infrastructure;
+using WCB.Web.Lib.Domain.Messages;
+using WCB.Web.Lib.Messaging;
 
 namespace WCB.Web.Lib.Domain
 {
-    public class ScrewHub : Hub, IScrewHub
+    [HubName("screwHub")]
+    public class ScrewHub : Hub
     {
+        private readonly IMessagePublisher _publisher;
         private readonly IHubContext _hubContext;
-        private uint _delay = 3;
-        private uint _workPeriod;
+        private CurrentSettings _settings = new CurrentSettings();
+        private Percent _lastSensor = new Percent(0);
 
-        public ScrewHub(IConnectionManager hubContext)
+        public ScrewHub(IConnectionManager hubContext, IMessagePublisher publisher)
         {
+            _publisher = publisher;
             _hubContext = hubContext.GetHubContext<ScrewHub>();
+
+            _publisher.GetEvent<SettingsUpdatedMessage>()
+                .Subscribe(x =>
+                {
+                    _hubContext.Clients.All.message("settingsUpdated", x);
+                    _settings = new CurrentSettings(x.Settings);
+                });
+
+            _publisher.GetEvent<SensorMessage>()
+                .Subscribe(x =>
+                {
+                    _lastSensor = x.AsPercent;
+                    _hubContext.Clients.All.message("sensorValue", x.AsPercent);
+                });
+
+            _publisher.GetEvent<ScrewStateUpdatedMessage>()
+                .Subscribe(x => _hubContext.Clients.All.messsage("screwState", x));
         }
 
-        public void SetDelay(uint newDelaySec)
+        public void UpdateSettings(CurrentSettings settings)
         {
-            _delay = newDelaySec;
-            _hubContext.Clients.All.message("delay", _delay);
+            _publisher.Publish(new SettingsUpdatedMessage(settings));
         }
 
-        public void SetWorkPeriod(uint valueSec)
+        public CurrentSettings GetCurrentSettings()
         {
-            _workPeriod = valueSec;
-            _hubContext.Clients.All.message("workPeriod", _workPeriod);
+            return _settings;
         }
 
-        public void ScrewState(State state)
+        public int GetCurrentSensor()
         {
-            _hubContext.Clients.All.message("screwState", state.ToString());
+            return _lastSensor;
         }
     }
 }

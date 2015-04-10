@@ -1,6 +1,8 @@
-﻿namespace WCB.Web.Lib.Domain
+﻿using System.Security.Policy;
+
+namespace WCB.Web.Lib.Domain
 {
-    public class ControllerCard
+    public class ControllerCard : IScrewIO, ISensor, IAir
     {
         public void SetScrew(State state)
         {

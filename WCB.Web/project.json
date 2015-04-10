@@ -6,7 +6,8 @@
         "Microsoft.AspNet.Mvc": "6.0.0-beta3",
         "Rx-Main": "2.2.5",
         "Microsoft.AspNet.SignalR.Server": "3.0.0-*",
-        "WCB.Web.Lib": "1.0.0-*"
+        "WCB.Web.Lib": "1.0.0-*",
+        "Microsoft.AspNet.SignalR.Core": "2.2.0"
     },
     "frameworks": {
         "aspnet50": {

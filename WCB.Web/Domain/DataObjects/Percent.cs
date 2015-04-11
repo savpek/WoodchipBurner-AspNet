@@ -1,4 +1,4 @@
-﻿namespace WCB.Web.Domain
+﻿namespace WCB.Web.Domain.DataObjects
 {
     public class Percent
     {

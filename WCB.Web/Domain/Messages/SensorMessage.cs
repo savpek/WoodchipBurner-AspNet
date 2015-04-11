@@ -1,4 +1,6 @@
-﻿namespace WCB.Web.Domain.Messages
+﻿using WCB.Web.Domain.DataObjects;
+
+namespace WCB.Web.Domain.Messages
 {
     public class SensorMessage
     {
@@ -24,7 +26,7 @@
             if (RawValue < LowerLimit)
                 return new Percent(0);
 
-            return new Percent(RawValue/UpperLimit);
+            return new Percent(RawValue*100/UpperLimit);
         }
     }
 }

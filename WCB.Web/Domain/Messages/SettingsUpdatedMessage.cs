@@ -1,4 +1,6 @@
-﻿namespace WCB.Web.Domain.Messages
+﻿using WCB.Web.Domain.DataObjects;
+
+namespace WCB.Web.Domain.Messages
 {
     public class SettingsUpdatedMessage
     {

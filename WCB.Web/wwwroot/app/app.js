@@ -1,6 +1,6 @@
 ﻿var app = angular.module("app", []);
 
-app.controller("controlsController", function ($scope, $rootScope) {
+app.controller("controlsController", function ($scope, $rootScope, $log) {
     $scope.delay = {
         current: 3,
         new: 2
@@ -15,29 +15,68 @@ app.controller("controlsController", function ($scope, $rootScope) {
         new: 3
     };
 
-    var hub = $.connection.screwHub;
-    
-    $.connection.hub.start().done(function (msg) {
-        console.log(msg);
+    $scope.brightnessSensor = {
+        lastvalue: 0
+    };
+    $scope.status = {
+        screw: 0
+    };
+
+    $scope.airFlow = {
+        current: 0,
+        new: 50
+    };
+
+    var mapCurrentSettings = function(settings) {
+        $scope.delay.current = settings.Delay;
+        $scope.workPeriod.current = settings.WorkPeriod;
+        $scope.brightnessLimit.current = settings.SensorMinimumLimit;
+        $scope.airFlow.current = settings.AirFlow;
+    }
+
+    var screwHub = $.connection.screwHub;
+    var logHub = $.connection.logHub;
+
+    $.connection.hub.start().done(function () {
+        screwHub.server.getCurrentSettings().done(function(settings) {
+            mapCurrentSettings(settings);
+        });
     })
     .fail(function(msg) {
         console.log(msg);
     });
 
-    hub.client.message = function (type, value) {
+    logHub.client.message = function (msg) {
+        $log.info(msg.Message);
+    }
+
+    screwHub.client.message = function (type, msg) {
         if (type === "settingsUpdated") {
-            $scope.delay.current = value.delay;
-            $scope.workPeriod.current = value.workPeriod;
-            $scope.brightnessLimit.current = value.sensorMinimumLimit;
+            mapCurrentSettings(msg);
+        }
+        if (type === "sensorValue") {
+            $scope.brightnessSensor.lastvalue = msg.Value;
+        }
+        if (type === "screwState") {
+            $scope.status.screw = msg;
+        }
+        if (type === "airState") {
+            $scope.status.air = msg;
         }
         $rootScope.$apply();
     };
 
     $scope.setNewValues = function () {
-        hub.server.updateSettings({
+        screwHub.server.updateSettings({
             delay: $scope.delay.new,
             workPeriod: $scope.workPeriod.new,
-            sensorMinimumLimit: $scope.brightnessLimit.new
+            sensorMinimumLimit: $scope.brightnessLimit.new,
+            airFlow : $scope.airFlow.new
         });
+        screwHub.server.enable();
+    }
+
+    $scope.disable = function() {
+        screwHub.server.disable();
     }
 });

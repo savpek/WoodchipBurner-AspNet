@@ -14,7 +14,8 @@ namespace WCB.Web
         public void ConfigureServices(IServiceCollection services)
         {
             var publisher = new MessagePublisher();
-            var screw = new ScrewAndAir(new ScrewIO(), publisher);
+            var logger = new Log(publisher);
+            var screw = new ScrewAndAir(new IOCard(logger), publisher);
 
             Observable
                 .Interval(TimeSpan.FromMilliseconds(250))

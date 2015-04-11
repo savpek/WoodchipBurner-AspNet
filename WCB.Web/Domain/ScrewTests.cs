@@ -1,6 +1,7 @@
 using System;
 using FluentAssertions;
 using NSubstitute;
+using WCB.Web.Domain.DataObjects;
 using WCB.Web.Domain.Messages;
 using WCB.Web.Messaging;
 using Xunit;
@@ -15,7 +16,7 @@ namespace WCB.Web.Domain
 
         public ScrewTests()
         {
-            var io = Substitute.For<IScrewIO>();
+            var io = Substitute.For<IScrewAndAirIO>();
             io.When(x => x.SetScrew(Arg.Any<State>())).Do(x => _currentState = x.Arg<State>());
 
             _publisher = new MessagePublisher();
@@ -40,7 +41,6 @@ namespace WCB.Web.Domain
         {
             var settings = new CurrentSettings
             {
-                ScrewEnabled = State.Enabled,
                 Delay = 3,
                 WorkPeriod = 2
             };

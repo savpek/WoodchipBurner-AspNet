@@ -50,21 +50,49 @@ app.controller("controlsController", function ($scope, $rootScope, $log) {
         $log.info(msg.Message);
     }
 
+    var sensorFeecbackSeries = new TimeSeries();
+    var screwFeedbackSeries = new TimeSeries();
+    var airFeedbackSeries = new TimeSeries();
+
     screwHub.client.message = function (type, msg) {
         if (type === "settingsUpdated") {
             mapCurrentSettings(msg);
         }
         if (type === "sensorValue") {
             $scope.brightnessSensor.lastvalue = msg.Value;
+            sensorFeecbackSeries.append(new Date().getTime(), msg.Value);
         }
         if (type === "screwState") {
             $scope.status.screw = msg;
+            screwFeedbackSeries.append(new Date().getTime(), msg * 100);
         }
         if (type === "airState") {
             $scope.status.air = msg;
+            airFeedbackSeries.append(new Date().getTime(), msg * 100);
         }
         $rootScope.$apply();
     };
+
+
+    var smoothie = new SmoothieChart({
+        grid: {
+            strokeStyle: 'rgb(125, 0, 0)',
+            lineWidth: 1, millisPerLine: 1000, verticalSections: 6
+        },
+        labels: { fillStyle: 'rgb(255, 255, 255)' },
+        millisPerPixel:100,
+        timestampFormatter: SmoothieChart.timeFormatter,
+        interpolation: 'step'
+    });
+
+    smoothie.addTimeSeries(sensorFeecbackSeries,
+      { strokeStyle: 'rgb(0, 255, 0)', lineWidth: 2 });
+    smoothie.addTimeSeries(screwFeedbackSeries,
+      { strokeStyle: 'rgb(255, 255, 255)', lineWidth: 2 });
+    smoothie.addTimeSeries(airFeedbackSeries,
+      { strokeStyle: 'rgb(120, 120, 255)', lineWidth: 2 });
+
+    smoothie.streamTo(document.getElementById("mycanvas"));
 
     $scope.setNewValues = function () {
         screwHub.server.updateSettings({

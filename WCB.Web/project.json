@@ -4,13 +4,17 @@
     "dependencies": {
         "Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
         "Microsoft.AspNet.Mvc": "6.0.0-beta3",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta3",
+        "Microsoft.AspNet.Server.WebListener":  "1.0.0-beta3",
+        "Microsoft.AspNet.Hosting": "1.0.0-beta3",
         "Rx-Main": "2.2.5",
         "Microsoft.AspNet.SignalR.Server": "3.0.0-*",
         "FluentAssertions": "3.3.0",
         "xunit.runner.aspnet": "",
         "xunit.runner.visualstudio": "",
         "xunit": "2.0.0-rc4-build2924",
-        "NSubstitute": ""
+        "NSubstitute": "",
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3"
     },
     "frameworks": {
         "aspnet50": {
@@ -29,6 +33,7 @@
         "bower_components"
     ],
     "commands": {
-        "test": "xunit.runner.aspnet"
+        "test": "xunit.runner.aspnet",
+        "web": "Microsoft.AspNet.Hosting /server 'Microsoft.AspNet.Server.WebListener' /server.urls http://localhost:5001"
     }
 }

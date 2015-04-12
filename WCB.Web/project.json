@@ -14,7 +14,11 @@
         "xunit.runner.visualstudio": "",
         "xunit": "2.0.0-rc4-build2924",
         "NSubstitute": "",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3"
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta3",
+        "Microsoft.Framework.Logging": "1.0.0-beta3",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta3",
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3"
     },
     "frameworks": {
         "aspnet50": {

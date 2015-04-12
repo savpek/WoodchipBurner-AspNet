@@ -41,7 +41,8 @@ div .feedback-left {
 }
 
 div .feedback-right {
-    float: right;
+    clear: both;
+    float: left;
     border: 3px #000000 dashed;
     box-shadow: 3px 3px 3px #888888;
     background-color: black;

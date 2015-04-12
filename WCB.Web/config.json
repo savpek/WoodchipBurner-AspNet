@@ -1,7 +1,7 @@
 ﻿{
-    SerialPort: {
+    "SerialPort": {
         "Port": "COM3",
         "Baud": "9600"
     },
-    Simulate: false
+    "Simulate": false
 }

@@ -51,6 +51,9 @@ namespace WCB.Web.Hubs
 
             _publisher.GetEvent<AirStateUpdatedMessage>()
                 .Subscribe(x => _hubContext.Clients.All.message("airState", x.State));
+
+            _publisher.GetEvent<SensorLimitCountdownMessage>()
+                .Subscribe(x => _hubContext.Clients.All.message("sensorLimit", x));
         }
 
         public void UpdateSettings(CurrentSettings settings)

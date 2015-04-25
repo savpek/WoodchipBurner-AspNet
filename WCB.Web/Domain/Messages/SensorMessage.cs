@@ -1,4 +1,5 @@
-﻿using WCB.Web.Domain.DataObjects;
+﻿using System;
+using WCB.Web.Domain.DataObjects;
 
 namespace WCB.Web.Domain.Messages
 {
@@ -8,9 +9,12 @@ namespace WCB.Web.Domain.Messages
         public int LowerLimit => 0;
         public int UpperLimit => 250;
 
+        public DateTime Measured { get; }
+
         public SensorMessage(int rawValue)
         {
             RawValue = rawValue;
+            Measured = Time.Now;
         }
 
         public Percent AsPercent => CalculateAsPercent();

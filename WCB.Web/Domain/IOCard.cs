@@ -1,7 +1,9 @@
-﻿using System.IO.Ports;
+﻿using System;
+using System.IO.Ports;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using FluentAssertions;
 using Microsoft.Framework.ConfigurationModel;
 
 namespace WCB.Web.Domain
@@ -16,8 +18,8 @@ namespace WCB.Web.Domain
             {
                 BaudRate = serialPortConfig.Get<int>("SerialPort:Baud"),
                 PortName = serialPortConfig.Get<string>("SerialPort:Port"),
-                WriteTimeout = 50,
-                ReadTimeout = 50
+                WriteTimeout = 1000,
+                ReadTimeout = 1000
             };
         }
 
@@ -33,7 +35,7 @@ namespace WCB.Web.Domain
                 _logger.Write($"Updated screw state '{state}'.");
 
             _screwState = state;
-            ExecuteCommand($"SET 2.T2 {ConvertState(state)}");
+            Retry(() => ExecuteCommand($"SET 2.T2 {ConvertState(state)}"));
         }
 
         public State GetAir() => _airState;
@@ -43,13 +45,28 @@ namespace WCB.Web.Domain
             if(_airState != state)
                 _logger.Write($"Updated air state '{state}'.");
 
-            ExecuteCommand($"SET 2.T1 {ConvertState(state)}");
+            Retry(() => ExecuteCommand($"SET 2.T1 {ConvertState(state)}"));
+
             _airState = state;
         }
 
         private string ConvertState(State state)
         {
             return state == State.Enabled ? "HIGH" : "LOW";
+        }
+
+        private T Retry<T>(Func<T> call)
+        {
+            try
+            {
+                return call.Invoke();
+            }
+            catch (Exception ex)
+            {
+                Thread.Sleep(10);
+                _logger.Write($"Got exception from io card '{ex.Message}', trying retry.");
+                return call.Invoke();
+            }
         }
 
         private string ExecuteCommand(string command)
@@ -59,9 +76,10 @@ namespace WCB.Web.Domain
                 try
                 {
                     _serialPort.Open();
+                    _serialPort.ReadExisting();
                     _serialPort.WriteLine(command);
 
-                    Thread.Sleep(50);
+                    Thread.Sleep(75);
 
                     var response = _serialPort.ReadExisting();
 
@@ -79,7 +97,12 @@ namespace WCB.Web.Domain
 
         public SensorValue GetSensor()
         {
-            var response = ExecuteCommand("ADC 7.T0.ADC0");
+            var response = Retry(() => ExecuteCommand("ADC 7.T0.ADC0"));
+            return GetSensorValueWithRetry(response);
+        }
+
+        private static SensorValue GetSensorValueWithRetry(string response)
+        {
             var regex = new Regex(@".*?\r\n(\d+).*");
 
             if (regex.Match(response) != Match.Empty)

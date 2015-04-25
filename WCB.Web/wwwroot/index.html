@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <label for="inputBrightnessLimit" class="col-sm-3">Vahti</label>
                     <div class="input-group col-md-4">
-                        <input type="number" class="form-control" id="inputBrightnessLimit" placeholder="" ng-model="brightnessLimit.new" max="100" min="0" disabled="">
+                        <input type="number" class="form-control" id="inputBrightnessLimit" placeholder="" ng-model="brightnessLimit.new" max="100" min="0">
                         <div class="input-group-addon input-addon-current">{{brightnessLimit.current}}</div>
                         <div class="input-group-addon input-addon-unit">Prosenttia</div>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="form-group row">
                     <label for="inputBrightnessTime" class="col-sm-3">Vahdin aika </label>
                     <div class="input-group col-md-4">
-                        <input type="number" class="form-control" id="inputBrightnessTime" placeholder="" ng-model="brightnessTime.new" max="100" min="0" disabled="">
+                        <input type="number" class="form-control" id="inputBrightnessTime" placeholder="" ng-model="brightnessTime.new" max="100" min="0">
                         <div class="input-group-addon input-addon-current">{{brightnessTime.current}}</div>
                         <div class="input-group-addon input-addon-unit">Sekunttia</div>
                     </div>
@@ -91,6 +91,13 @@
                     <div class="input-group col-md-3">
                         <input type="number" class="form-control" id="sensorValue" placeholder="" ng-model="brightnessSensor.lastvalue" max="100" min="0" disabled="">
                         <div class="input-group-addon input-addon-unit">Prosenttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="sensorLimitResult" class="col-sm-2">Vahti</label>
+                    <div class="input-group col-md-3">
+                        <input type="text" class="form-control" id="sensorLimitResult" ng-model="sensorLimit" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-unit">Kulunut/Raja</div>
                     </div>
                 </div>
             </div>

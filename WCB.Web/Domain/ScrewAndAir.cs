@@ -14,6 +14,8 @@ namespace WCB.Web.Domain
 
         private DateTime _sequenceBegin;
         private bool _workStarted;
+        private DateTime _lastGoodSensorTiming;
+        private Percent _lastSensorValue = new Percent(0);
 
         public ScrewAndAir(IScrewAndAirIO ioCard, IMessagePublisher publisher)
         {
@@ -22,18 +24,43 @@ namespace WCB.Web.Domain
             publisher.GetEvent<TickMessage>().Subscribe(x => OnTick(x.Occurred));
             publisher.GetEvent<SettingsUpdatedMessage>().Subscribe(x => OnSettingsUpdated(x.Settings));
             publisher.GetEvent<EnableOrDisableDeviceMessage>().Subscribe(x => _deviceEnabled = x.DesiredState);
+            publisher.GetEvent<SensorMessage>().Subscribe(x => _lastSensorValue = x.AsPercent);
         }
 
         private void OnTick(DateTime time)
         {
-            if (time > _sequenceBegin.AddSeconds(_settings.Delay).AddSeconds(_settings.WorkPeriod))
+            if (_lastSensorValue > _settings.SensorMinimumLimit )
+                _lastGoodSensorTiming = time;
+
+            var timeout = (time - (_lastGoodSensorTiming)).TotalSeconds;
+            _publisher.Publish(new SensorLimitCountdownMessage(timeout, _settings.SensorLimitTimeTreshold));
+
+            if (timeout > _settings.SensorLimitTimeTreshold)
+                _deviceEnabled = State.Disabled;
+
+            if (SequenceShouldReset(time))
                 ResetSequence(time);
 
-            if (_workStarted && time > _sequenceBegin.AddSeconds(_settings.WorkPeriod))
+            if (ScrewWorkIsDone(time))
                 UpdateScrewState(State.Disabled);
 
-            if (_workStarted && AirFlowTimeout(time))
+            if (NewMethod(time))
                 UpdateAirState(State.Disabled);
+        }
+
+        private bool NewMethod(DateTime time)
+        {
+            return _workStarted && AirFlowTimeout(time);
+        }
+
+        private bool ScrewWorkIsDone(DateTime time)
+        {
+            return _workStarted && time > _sequenceBegin.AddSeconds(_settings.WorkPeriod);
+        }
+
+        private bool SequenceShouldReset(DateTime time)
+        {
+            return time > _sequenceBegin.AddSeconds(_settings.Delay).AddSeconds(_settings.WorkPeriod);
         }
 
         private bool AirFlowTimeout(DateTime currentTime)

@@ -27,10 +27,22 @@ app.controller("controlsController", function ($scope, $rootScope, $log) {
         new: 50
     };
 
+    $scope.brightnessTime = {
+        current: 0,
+        new: 0
+    };
+
+    $scope.sensorLimit = {
+        current: 0,
+        limit: 0
+    }
+
     var mapCurrentSettings = function(settings) {
         $scope.delay.current = settings.Delay;
         $scope.workPeriod.current = settings.WorkPeriod;
         $scope.brightnessLimit.current = settings.SensorMinimumLimit;
+        $scope.brightnessTime.current = settings.SensorLimitTimeTreshold;
+
         $scope.airFlow.current = settings.AirFlow;
     }
 
@@ -70,6 +82,9 @@ app.controller("controlsController", function ($scope, $rootScope, $log) {
             $scope.status.air = msg;
             airFeedbackSeries.append(new Date().getTime(), msg * 100);
         }
+        if (type === "sensorLimit") {
+            $scope.sensorLimit = Math.floor(msg.CurrentTotal) + "/" + msg.LimitSeconds;
+        }
         $rootScope.$apply();
     };
 
@@ -99,7 +114,8 @@ app.controller("controlsController", function ($scope, $rootScope, $log) {
             delay: $scope.delay.new,
             workPeriod: $scope.workPeriod.new,
             sensorMinimumLimit: $scope.brightnessLimit.new,
-            airFlow : $scope.airFlow.new
+            airFlow: $scope.airFlow.new,
+            SensorLimitTimeTreshold: $scope.brightnessTime.new
         });
         screwHub.server.enable();
     }

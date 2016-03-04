@@ -1,0 +1,1339 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "FluentAssertions/3.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Diagnostics/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Hosting/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Mvc/6.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Server.IIS/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta3",
+          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta3"
+        }
+      },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.SignalR.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "Microsoft.AspNet.StaticFiles/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.Framework.ConfigurationModel/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        }
+      },
+      "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Console/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging": "1.0.0-beta3",
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Interfaces/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-beta3": {
+        "type": "package"
+      },
+      "Newtonsoft.Json/6.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NSubstitute/1.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/NSubstitute.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NSubstitute.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "xunit/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0-beta1-build2945]",
+          "xunit.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0-beta1-build2945": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.tdnet.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.runner.aspnet/2.1.0-beta1-build60": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "FluentAssertions/3.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Diagnostics/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Hosting/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Mvc/6.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Server.IIS/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta3",
+          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta3"
+        }
+      },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.SignalR.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "Microsoft.AspNet.StaticFiles/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.Framework.ConfigurationModel/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        }
+      },
+      "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Console/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging": "1.0.0-beta3",
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Interfaces/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-beta3": {
+        "type": "package"
+      },
+      "Newtonsoft.Json/6.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NSubstitute/1.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/NSubstitute.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NSubstitute.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "xunit/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0-beta1-build2945]",
+          "xunit.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0-beta1-build2945": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.tdnet.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.runner.aspnet/2.1.0-beta1-build60": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "FluentAssertions/3.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FluentAssertions.Core.dll": {},
+          "lib/net45/FluentAssertions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Diagnostics/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Hosting/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Mvc/6.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Server.IIS/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Loader.IIS": "1.0.0-beta3",
+          "Microsoft.AspNet.Loader.IIS.Interop": "1.0.0-beta3"
+        }
+      },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.SignalR.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5"
+      },
+      "Microsoft.AspNet.StaticFiles/1.0.0-beta3": {
+        "type": "package"
+      },
+      "Microsoft.Framework.ConfigurationModel/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.dll": {}
+        }
+      },
+      "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Console/1.0.0-beta3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Logging": "1.0.0-beta3",
+          "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta3"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Interfaces/1.0.0-beta3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Framework.Logging.Interfaces.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-beta3": {
+        "type": "package"
+      },
+      "Newtonsoft.Json/6.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NSubstitute/1.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/NSubstitute.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NSubstitute.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "xunit/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0-beta1-build2945]",
+          "xunit.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0-beta1-build2945": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0-beta1-build2945]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0-beta1-build2945": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.tdnet.dll": {},
+          "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.runner.aspnet/2.1.0-beta1-build60": {
+        "type": "package"
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.AspNet.SignalR.Server/1.0.0": {
+      "type": "project",
+      "path": "../wrap/Microsoft.AspNet.SignalR.Server/project.json"
+    },
+    "FluentAssertions/3.3.0": {
+      "type": "package",
+      "sha512": "/nvTu0y49M/d+l181nRD2HQv0rZI97Gb4LdO+F+ATEGhrKTRb6Mga9VYaVzFY3ak75cJUaA/QKz7Nf0aY+Xj9Q==",
+      "files": [
+        "FluentAssertions.3.3.0.nupkg",
+        "FluentAssertions.3.3.0.nupkg.sha512",
+        "FluentAssertions.nuspec",
+        "lib/net40/FluentAssertions.Core.dll",
+        "lib/net40/FluentAssertions.Core.pdb",
+        "lib/net40/FluentAssertions.Core.xml",
+        "lib/net40/FluentAssertions.dll",
+        "lib/net40/FluentAssertions.pdb",
+        "lib/net40/FluentAssertions.xml",
+        "lib/net45/FluentAssertions.Core.dll",
+        "lib/net45/FluentAssertions.Core.pdb",
+        "lib/net45/FluentAssertions.Core.xml",
+        "lib/net45/FluentAssertions.dll",
+        "lib/net45/FluentAssertions.pdb",
+        "lib/net45/FluentAssertions.xml",
+        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.dll",
+        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.pdb",
+        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.XML",
+        "lib/portable-win81+wpa81/FluentAssertions.Core.dll",
+        "lib/portable-win81+wpa81/FluentAssertions.Core.pdb",
+        "lib/portable-win81+wpa81/FluentAssertions.Core.xml",
+        "lib/portable-win81+wpa81/FluentAssertions.dll",
+        "lib/portable-win81+wpa81/FluentAssertions.pdb",
+        "lib/portable-win81+wpa81/FluentAssertions.xml",
+        "lib/sl5/de/Microsoft.CSharp.resources.dll",
+        "lib/sl5/de/System.Xml.Linq.resources.dll",
+        "lib/sl5/es/Microsoft.CSharp.resources.dll",
+        "lib/sl5/es/System.Xml.Linq.resources.dll",
+        "lib/sl5/FluentAssertions.Core.dll",
+        "lib/sl5/FluentAssertions.Core.pdb",
+        "lib/sl5/FluentAssertions.Core.xml",
+        "lib/sl5/FluentAssertions.dll",
+        "lib/sl5/FluentAssertions.pdb",
+        "lib/sl5/FluentAssertions.xml",
+        "lib/sl5/fr/Microsoft.CSharp.resources.dll",
+        "lib/sl5/fr/System.Xml.Linq.resources.dll",
+        "lib/sl5/it/Microsoft.CSharp.resources.dll",
+        "lib/sl5/it/System.Xml.Linq.resources.dll",
+        "lib/sl5/ja/Microsoft.CSharp.resources.dll",
+        "lib/sl5/ja/System.Xml.Linq.resources.dll",
+        "lib/sl5/ko/Microsoft.CSharp.resources.dll",
+        "lib/sl5/ko/System.Xml.Linq.resources.dll",
+        "lib/sl5/Microsoft.CSharp.dll",
+        "lib/sl5/Microsoft.CSharp.xml",
+        "lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll",
+        "lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml",
+        "lib/sl5/ru/Microsoft.CSharp.resources.dll",
+        "lib/sl5/ru/System.Xml.Linq.resources.dll",
+        "lib/sl5/System.Xml.Linq.dll",
+        "lib/sl5/System.Xml.Linq.xml",
+        "lib/sl5/zh-Hans/Microsoft.CSharp.resources.dll",
+        "lib/sl5/zh-Hans/System.Xml.Linq.resources.dll",
+        "lib/sl5/zh-Hant/Microsoft.CSharp.resources.dll",
+        "lib/sl5/zh-Hant/System.Xml.Linq.resources.dll",
+        "lib/win8/FluentAssertions.Core.dll",
+        "lib/win8/FluentAssertions.Core.pdb",
+        "lib/win8/FluentAssertions.Core.xml",
+        "lib/win8/FluentAssertions.dll",
+        "lib/win8/FluentAssertions.pdb",
+        "lib/win8/FluentAssertions.XML",
+        "lib/wp8/FluentAssertions.Core.dll",
+        "lib/wp8/FluentAssertions.Core.pdb",
+        "lib/wp8/FluentAssertions.Core.xml",
+        "lib/wp8/FluentAssertions.dll",
+        "lib/wp8/FluentAssertions.pdb",
+        "lib/wp8/FluentAssertions.xml"
+      ]
+    },
+    "Microsoft.AspNet.Diagnostics/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "91+sX0hn04KPNJZPkA2ISjTCwGb+Dwyb5AU5U7jasXGvfR/OayXAnXcyQBJgCKSAfO/lz918fV3uDkERwrYGvA==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Diagnostics.dll",
+        "lib/aspnet50/Microsoft.AspNet.Diagnostics.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Diagnostics.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Diagnostics.xml",
+        "Microsoft.AspNet.Diagnostics.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Diagnostics.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Diagnostics.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Hosting/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "hchHrRUsJ9/oi+4pjzJFxVoubma/AKHY3Rn44Gnyd+MF4XcDlztcYVj4MZQTFDMqT45FqIXAWKZG59+Ro3iW7w==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Hosting.dll",
+        "lib/aspnet50/Microsoft.AspNet.Hosting.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Hosting.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Hosting.xml",
+        "Microsoft.AspNet.Hosting.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Hosting.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Hosting.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Loader.IIS/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "5pv+SbpxPjF1y5HJgmXRkVVlosW3sqwkF+8xjctKr3RBcX3PlRj+dFjyCyWlWg9YGUwkBe9AsKS9D6imRRrkvA==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Loader.IIS.dll",
+        "lib/aspnet50/Microsoft.AspNet.Loader.IIS.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Loader.IIS.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Loader.IIS.xml",
+        "Microsoft.AspNet.Loader.IIS.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Loader.IIS.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Loader.IIS.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "55okUTHQOzvQIOCrZ649JvYv4lWpagGIJkF9znzYh0RbDufjZmF9hn0lIi+L5biHQULi6Kmz/K4TD6eTbiHESQ==",
+      "files": [
+        "InteropAssemblies/amd64/Microsoft.AspNet.Loader.IIS.Interop.dll",
+        "InteropAssemblies/x86/Microsoft.AspNet.Loader.IIS.Interop.dll",
+        "Microsoft.AspNet.Loader.IIS.Interop.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Loader.IIS.Interop.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Loader.IIS.Interop.nuspec",
+        "tools/AspNet.Loader.dll"
+      ]
+    },
+    "Microsoft.AspNet.Mvc/6.0.0-beta3": {
+      "type": "package",
+      "sha512": "EV44SbXMQu4tFH9v1wsNaPxBEAvL3iP8DJI70gdjx0g4RQWFXGxrelun2/ylCAo0p+ermM8NIo/47c4bo0nt1Q==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Mvc.dll",
+        "lib/aspnet50/Microsoft.AspNet.Mvc.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Mvc.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Mvc.xml",
+        "Microsoft.AspNet.Mvc.6.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Mvc.6.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Mvc.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Server.IIS/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "l46+yGPsDYEy08j2oXd6deIDDI97Q10vVN1IgTmJAeahLNp2P3eNnwrOA4Nz5UA/MOsM1+EQRqLt6HrVHSpPMg==",
+      "files": [
+        "Microsoft.AspNet.Server.IIS.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Server.IIS.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Server.IIS.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Server.WebListener/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "0ClTq4gLVAVoHe61TjrjkK6qVnQRp/qZlxLupauqMiOyWbfvYi65iudkkr/8Azyk/u5hBLT670OD63aeQdIm7w==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/aspnet50/Microsoft.AspNet.Server.WebListener.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Server.WebListener.xml",
+        "Microsoft.AspNet.Server.WebListener.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.Server.WebListener.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.Server.WebListener.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.StaticFiles/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "YnGF5iOv7nIXQZgKUzXfRGN3bGsAwtjN7yeLmxtTR/unfsyIBy+81ORG1FHiCUJnGOPti6HTWkAKNUeZsAJzPw==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.StaticFiles.dll",
+        "lib/aspnet50/Microsoft.AspNet.StaticFiles.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.StaticFiles.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.StaticFiles.xml",
+        "Microsoft.AspNet.StaticFiles.1.0.0-beta3.nupkg",
+        "Microsoft.AspNet.StaticFiles.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.AspNet.StaticFiles.nuspec"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "BFTQSZMO9nEUWwRgKZofYYuI9U5DfAAxKKypXrPUm7eI6O0ysQ5XGlvoWYkF2mVvlh+13hB4ozAYpIdySofcig==",
+      "files": [
+        "lib/aspnet50/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/aspnet50/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/aspnetcore50/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/aspnetcore50/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.xml",
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta3.nupkg",
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.nuspec"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "slEXxVOljEhSJBreyTzURnO41/pbu4LlXcEIRqgtsofpXWPx0UBVuwm8xTWqVtzigJ6X6LOF6rxroSkgguvvJg==",
+      "files": [
+        "lib/aspnet50/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/aspnet50/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/aspnetcore50/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/aspnetcore50/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta3.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Json.nuspec"
+      ]
+    },
+    "Microsoft.Framework.Logging/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "qDXH+9KoTtR7XSCwTBEjTEVSOtMWXp9ULQwAzxf1et6h/891oRWNTS6ZfOi3kiMwz8NFhR9bylOj9AsQfPsSAg==",
+      "files": [
+        "lib/aspnet50/Microsoft.Framework.Logging.dll",
+        "lib/aspnet50/Microsoft.Framework.Logging.xml",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.dll",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.xml",
+        "lib/net45/Microsoft.Framework.Logging.dll",
+        "lib/net45/Microsoft.Framework.Logging.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.xml",
+        "Microsoft.Framework.Logging.1.0.0-beta3.nupkg",
+        "Microsoft.Framework.Logging.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.Framework.Logging.nuspec"
+      ]
+    },
+    "Microsoft.Framework.Logging.Console/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "U9GePa4t0ANLaYAi5g2xymgLs5vrrVY79lBHfpGplfeeYbg693BKA/npgLtUcIlHom5kkzdb1epcsXHsBWucfw==",
+      "files": [
+        "lib/aspnet50/Microsoft.Framework.Logging.Console.dll",
+        "lib/aspnet50/Microsoft.Framework.Logging.Console.xml",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.Console.dll",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.Console.xml",
+        "lib/net45/Microsoft.Framework.Logging.Console.dll",
+        "lib/net45/Microsoft.Framework.Logging.Console.xml",
+        "Microsoft.Framework.Logging.Console.1.0.0-beta3.nupkg",
+        "Microsoft.Framework.Logging.Console.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.Framework.Logging.Console.nuspec"
+      ]
+    },
+    "Microsoft.Framework.Logging.Interfaces/1.0.0-beta3": {
+      "type": "package",
+      "sha512": "luSLi6eUYflkdA9ilZgyRna5UGDfk4LiIOiAvJ5zBRrgED4yZrO/gVOD2iFl0YaYbj0n9KcVPxCsgqkseMEPCA==",
+      "files": [
+        "lib/aspnet50/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/aspnet50/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/aspnetcore50/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.Interfaces.xml",
+        "Microsoft.Framework.Logging.Interfaces.1.0.0-beta3.nupkg",
+        "Microsoft.Framework.Logging.Interfaces.1.0.0-beta3.nupkg.sha512",
+        "Microsoft.Framework.Logging.Interfaces.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-beta3": {
+      "type": "package",
+      "sha512": "jfm3xfho+RZpOPUwQY4/Saq0CfpqIj+Anrtv+q93IJsyQ+0qpIUMA91K7Xx4BI7b2KOAZAn1OCAiLrG/MqW89A==",
+      "files": [
+        "lib/aspnet50/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll",
+        "lib/aspnetcore50/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll",
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-beta3.nupkg",
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-beta3.nupkg.sha512",
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/6.0.6": {
+      "type": "package",
+      "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netcore45/Newtonsoft.Json.dll",
+        "lib/netcore45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
+        "Newtonsoft.Json.6.0.6.nupkg",
+        "Newtonsoft.Json.6.0.6.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "NSubstitute/1.8.1": {
+      "type": "package",
+      "sha512": "xeE8LLtsXebqXvTPVhERBy7QQSBhEiblPteWEvjVjcQWpX+uLgPrAp62u1uxB5aXgaxBdGXn+4FG+hiwhD9Xsw==",
+      "files": [
+        "acknowledgements.txt",
+        "BreakingChanges.txt",
+        "CHANGELOG.txt",
+        "lib/net35/NSubstitute.dll",
+        "lib/net35/NSubstitute.XML",
+        "lib/net40/NSubstitute.dll",
+        "lib/net40/NSubstitute.XML",
+        "lib/net45/NSubstitute.dll",
+        "lib/net45/NSubstitute.XML",
+        "LICENSE.txt",
+        "NSubstitute.1.8.1.nupkg",
+        "NSubstitute.1.8.1.nupkg.sha512",
+        "NSubstitute.nuspec",
+        "README.txt"
+      ]
+    },
+    "Rx-Core/2.2.5": {
+      "type": "package",
+      "sha512": "DfWVTfW6tvRkkqpnRHKxPIvaRZyDJGADuqrE6J2nwejOQbLRWi0rNUwXkViDWz++25BGDy3iRE5OE6Dv8mJxYQ==",
+      "files": [
+        "lib/net40/System.Reactive.Core.dll",
+        "lib/net40/System.Reactive.Core.XML",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Core.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Core.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.XML",
+        "lib/sl5/System.Reactive.Core.dll",
+        "lib/sl5/System.Reactive.Core.XML",
+        "lib/windows8/System.Reactive.Core.dll",
+        "lib/windows8/System.Reactive.Core.XML",
+        "lib/windowsphone71/System.Reactive.Core.dll",
+        "lib/windowsphone71/System.Reactive.Core.XML",
+        "lib/windowsphone8/System.Reactive.Core.dll",
+        "lib/windowsphone8/System.Reactive.Core.XML",
+        "Rx-Core.2.2.5.nupkg",
+        "Rx-Core.2.2.5.nupkg.sha512",
+        "Rx-Core.nuspec"
+      ]
+    },
+    "Rx-Interfaces/2.2.5": {
+      "type": "package",
+      "sha512": "FKtG2QfMIeUcfB7r3a89VoAiszX3DTvYETkpC6U0FzWpxRK/mcHyzYOsniDfag+NsDG0P1k1c8yNSefXKp3t2A==",
+      "files": [
+        "lib/net40/System.Reactive.Interfaces.dll",
+        "lib/net40/System.Reactive.Interfaces.XML",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.XML",
+        "lib/sl5/System.Reactive.Interfaces.dll",
+        "lib/sl5/System.Reactive.Interfaces.XML",
+        "lib/windows8/System.Reactive.Interfaces.dll",
+        "lib/windows8/System.Reactive.Interfaces.XML",
+        "lib/windowsphone71/System.Reactive.Interfaces.dll",
+        "lib/windowsphone71/System.Reactive.Interfaces.XML",
+        "lib/windowsphone8/System.Reactive.Interfaces.dll",
+        "lib/windowsphone8/System.Reactive.Interfaces.XML",
+        "Rx-Interfaces.2.2.5.nupkg",
+        "Rx-Interfaces.2.2.5.nupkg.sha512",
+        "Rx-Interfaces.nuspec"
+      ]
+    },
+    "Rx-Linq/2.2.5": {
+      "type": "package",
+      "sha512": "UTeCIu3cWPExxmTzdiVq7SalqTBhUaomBTaAC9LpYPoAopjlFwA3hjVWXoLkGlDc/44wqJemJuEwFP00KphiFg==",
+      "files": [
+        "lib/net40/System.Reactive.Linq.dll",
+        "lib/net40/System.Reactive.Linq.XML",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.XML",
+        "lib/sl5/System.Reactive.Linq.dll",
+        "lib/sl5/System.Reactive.Linq.XML",
+        "lib/windows8/System.Reactive.Linq.dll",
+        "lib/windows8/System.Reactive.Linq.XML",
+        "lib/windowsphone71/System.Reactive.Linq.dll",
+        "lib/windowsphone71/System.Reactive.Linq.XML",
+        "lib/windowsphone8/System.Reactive.Linq.dll",
+        "lib/windowsphone8/System.Reactive.Linq.XML",
+        "Rx-Linq.2.2.5.nupkg",
+        "Rx-Linq.2.2.5.nupkg.sha512",
+        "Rx-Linq.nuspec"
+      ]
+    },
+    "Rx-Main/2.2.5": {
+      "type": "package",
+      "sha512": "qdQ6qENEiLsp/LRdzZlLlodihWN8VDjwNfWa8c2ELjEHZgTdKzt1V4i61gkHVtFKZXe8Px6KupbMP3pZ+1tusQ==",
+      "files": [
+        "Rx-Main.2.2.5.nupkg",
+        "Rx-Main.2.2.5.nupkg.sha512",
+        "Rx-Main.nuspec"
+      ]
+    },
+    "Rx-PlatformServices/2.2.5": {
+      "type": "package",
+      "sha512": "pMnNEvJVjT+wuDib+W/bi5hhIYcre7dW5yxvKrJxnR4iKJ1VLA/dY2FTtjDriHGx7OeGn12lQewXlH2oHiWFPA==",
+      "files": [
+        "lib/net40/System.Reactive.PlatformServices.dll",
+        "lib/net40/System.Reactive.PlatformServices.XML",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.XML",
+        "lib/sl5/System.Reactive.PlatformServices.dll",
+        "lib/sl5/System.Reactive.PlatformServices.XML",
+        "lib/windows8/System.Reactive.PlatformServices.dll",
+        "lib/windows8/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone71/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone71/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone8/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone8/System.Reactive.PlatformServices.XML",
+        "Rx-PlatformServices.2.2.5.nupkg",
+        "Rx-PlatformServices.2.2.5.nupkg.sha512",
+        "Rx-PlatformServices.nuspec"
+      ]
+    },
+    "xunit/2.1.0-beta1-build2945": {
+      "type": "package",
+      "sha512": "XNaeokPy5IxkaNc9rPi2jyI46awTCnVrK9nB/OGF6Ae4IJJIullc7PnbS/jnFwkaRxA8wXw35famc+1ZP77vAg==",
+      "files": [
+        "xunit.2.1.0-beta1-build2945.nupkg",
+        "xunit.2.1.0-beta1-build2945.nupkg.sha512",
+        "xunit.nuspec"
+      ]
+    },
+    "xunit.abstractions/2.0.0": {
+      "type": "package",
+      "sha512": "NAdxKQRzuLnCZ0g++x6i87/8rMBpQoRiRlRNLAqfODm2zJPbteHRoSER3DXfxnqrHXyBJT8rFaZ8uveBeQyaMA==",
+      "files": [
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.abstractions.dll",
+        "lib/portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.0.nupkg",
+        "xunit.abstractions.2.0.0.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
+    },
+    "xunit.assert/2.1.0-beta1-build2945": {
+      "type": "package",
+      "sha512": "TyyFHDQ0xUgcaH87wjs3EV3fltky9Hy0E5QUHTiVMSRQb9kiiLR5uX2em3mkFZIdC6NM+CjQwOpVH5UlgD19pg==",
+      "files": [
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.dll",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.pdb",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.assert.xml",
+        "xunit.assert.2.1.0-beta1-build2945.nupkg",
+        "xunit.assert.2.1.0-beta1-build2945.nupkg.sha512",
+        "xunit.assert.nuspec"
+      ]
+    },
+    "xunit.core/2.1.0-beta1-build2945": {
+      "type": "package",
+      "sha512": "IYD9VnQl74YyhhXrwKlT86IYpM5R3v5o5Jsf/a58vnZSSjy8IEm5fthGW9MEHCKKqR3YQhk6QhNbivxyR1mCiw==",
+      "files": [
+        "build/_Desktop/xunit.execution.desktop.dll",
+        "build/monoandroid/xunit.core.props",
+        "build/monoandroid/xunit.execution.MonoAndroid.dll",
+        "build/monotouch/xunit.core.props",
+        "build/monotouch/xunit.execution.MonoTouch.dll",
+        "build/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.props",
+        "build/portable-win81+wpa81/xunit.core.props",
+        "build/portable-win81+wpa81/xunit.core.targets",
+        "build/portable-win81+wpa81/xunit.execution.universal.dll",
+        "build/portable-win81+wpa81/xunit.execution.universal.pri",
+        "build/win8/xunit.core.props",
+        "build/win8/xunit.core.targets",
+        "build/win8/xunit.execution.win8.dll",
+        "build/wp8/xunit.core.props",
+        "build/wp8/xunit.core.targets",
+        "build/wp8/xunit.execution.wp8.dll",
+        "build/Xamarin.iOS/xunit.core.props",
+        "build/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
+        "xunit.core.2.1.0-beta1-build2945.nupkg",
+        "xunit.core.2.1.0-beta1-build2945.nupkg.sha512",
+        "xunit.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.core/2.1.0-beta1-build2945": {
+      "type": "package",
+      "sha512": "ZdPh/KN8kOEL/N+xdbUZo+Q0CfTxVhOvekz/38+C6X+teTAhu0ba7LQ3dyr6natAUktYE1REiacbbLmpxfE4AQ==",
+      "files": [
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.dll.tdnet",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.pdb",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.core.xml",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.tdnet.dll",
+        "lib/portable-net45+aspnetcore50+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.runner.utility.desktop.dll",
+        "xunit.extensibility.core.2.1.0-beta1-build2945.nupkg",
+        "xunit.extensibility.core.2.1.0-beta1-build2945.nupkg.sha512",
+        "xunit.extensibility.core.nuspec"
+      ]
+    },
+    "xunit.runner.aspnet/2.1.0-beta1-build60": {
+      "type": "package",
+      "sha512": "MIvM2Td4CnPx1gwlIiepPjt/6Bvv26mUvC0a/8TUI9HJG1uvHk426mGabOw7X0pPbjOkaKZpt4gcTbQH1QRZ9Q==",
+      "files": [
+        "lib/aspnet50/xunit.runner.aspnet.dll",
+        "lib/aspnet50/xunit.runner.aspnet.xml",
+        "lib/aspnetcore50/xunit.runner.aspnet.dll",
+        "lib/aspnetcore50/xunit.runner.aspnet.xml",
+        "xunit.runner.aspnet.2.1.0-beta1-build60.nupkg",
+        "xunit.runner.aspnet.2.1.0-beta1-build60.nupkg.sha512",
+        "xunit.runner.aspnet.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Microsoft.AspNet.Server.IIS >= 1.0.0-beta3",
+      "Microsoft.AspNet.Mvc >= 6.0.0-beta3",
+      "Microsoft.AspNet.StaticFiles >= 1.0.0-beta3",
+      "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta3",
+      "Microsoft.AspNet.Hosting >= 1.0.0-beta3",
+      "Rx-Main >= 2.2.5",
+      "Microsoft.AspNet.SignalR.Server >= 3.0.0-beta3",
+      "FluentAssertions >= 3.3.0",
+      "NSubstitute >= 1.8.1",
+      "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta3",
+      "Microsoft.AspNet.Diagnostics >= 1.0.0-beta3",
+      "Microsoft.Framework.Logging >= 1.0.0-beta3",
+      "Microsoft.Framework.Logging.Console >= 1.0.0-beta3",
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta3",
+      "xunit.runner.aspnet >= 2.1.0-beta1-build60",
+      "xunit >= 2.1.0-beta1-build2945"
+    ]
+  }
+}

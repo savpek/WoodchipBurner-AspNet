@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>WCB</title>
+    <link rel="stylesheet" type="text/css" href="bower_concat.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body ng-controller="controlsController">
+<div class="container">
+    <div class="middle panel panel-primary">
+        <div class="panel-heading"><i class="fa fa-cogs fa-lg"></i> Hallinta
+        </div>
+        <div class="panel-body container-fluid">
+            <form class="form-horizontal">
+                <div class="form-group row">
+                    <label for="inputWorkPeriod" class="col-sm-3">Syöttö</label>
+                    <div class="input-group col-md-4">
+                        <input type="number" class="form-control" id="inputWorkPeriod" placeholder="" ng-model="workPeriod.new" max="100" min="0">
+                        <div class="input-group-addon input-addon-current">{{workPeriod.current}}</div>
+                        <div class="input-group-addon input-addon-unit">Sekunttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputDelay" class="col-sm-3">Viive</label>
+                    <div class="input-group col-md-4">
+                        <input type="number" class="form-control" id="inputDelay" placeholder="" ng-model="delay.new" max="100" min="0">
+                        <div class="input-group-addon input-addon-current">{{delay.current}}</div>
+                        <div class="input-group-addon input-addon-unit">Sekunttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputBrightnessLimit" class="col-sm-3">Vahti</label>
+                    <div class="input-group col-md-4">
+                        <input type="number" class="form-control" id="inputBrightnessLimit" placeholder="" ng-model="brightnessLimit.new" max="100" min="0">
+                        <div class="input-group-addon input-addon-current">{{brightnessLimit.current}}</div>
+                        <div class="input-group-addon input-addon-unit">Prosenttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputBrightnessTime" class="col-sm-3">Vahdin aika </label>
+                    <div class="input-group col-md-4">
+                        <input type="number" class="form-control" id="inputBrightnessTime" placeholder="" ng-model="brightnessTime.new" max="100" min="0">
+                        <div class="input-group-addon input-addon-current">{{brightnessTime.current}}</div>
+                        <div class="input-group-addon input-addon-unit">Sekunttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="airFlow" class="col-sm-3">Ilmansyöttö</label>
+                    <div class="input-group col-md-4">
+                        <input type="number" class="form-control" id="airFlow" placeholder="" ng-model="airFlow.new" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-current">{{airFlow.current}}</div>
+                        <div class="input-group-addon input-addon-unit">Prosenttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-primary" ng-click="setNewValues()">Aseta</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" ng-click="disable()">Sammuta</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="middle panel panel-primary">
+        <div class="panel-heading">
+            <i class="fa fa-info fa-lg"></i> Seuranta
+        </div>
+        <div class="panel-body container-fluid">
+            <div class="feedback-left">
+                <div class="form-group row">
+                    <label for="screwStatus" class="col-sm-2">Ruuvin tila</label>
+                    <div class="input-group col-md-3">
+                        <input type="number" class="form-control" id="screwStatus" placeholder="" ng-model="status.screw" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-unit">0/1</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="airStatus" class="col-sm-2">Ilmansyötön tila</label>
+                    <div class="input-group col-md-3">
+                        <input type="number" class="form-control" id="airStatus" placeholder="" ng-model="status.air" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-unit">0/1</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="sensorValue" class="col-sm-2">Sensori</label>
+                    <div class="input-group col-md-3">
+                        <input type="number" class="form-control" id="sensorValue" placeholder="" ng-model="brightnessSensor.lastvalue" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-unit">Prosenttia</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="sensorLimitResult" class="col-sm-2">Vahti</label>
+                    <div class="input-group col-md-3">
+                        <input type="text" class="form-control" id="sensorLimitResult" ng-model="sensorLimit" max="100" min="0" disabled="">
+                        <div class="input-group-addon input-addon-unit">Kulunut/Raja</div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-right">
+                <canvas id="mycanvas" class="chart" width="600"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bower_concat.js"></script>
+<script src='/signalr/js'></script>
+<script src="app/app.js"></script>
+</body>
+</html>

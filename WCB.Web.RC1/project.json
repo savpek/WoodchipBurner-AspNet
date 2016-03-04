@@ -1,0 +1,48 @@
+﻿{
+    "webroot": "wwwroot",
+    "version": "1.0.0-*",
+  "dependencies": {
+    "FluentAssertions": "4.0.1",
+    "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-rc1-final",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Server.Kestrel":  "1.0.0-rc1-final",
+    "Newtonsoft.Json": "7.0.1",
+    "NSubstitute": "1.9.2",
+    "System.Collections.Immutable": "1.1.37",
+    "System.Net.Http": "4.0.0",
+    "Rx-Main": "2.2.5",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final",
+    "Microsoft.AspNet.SignalR.Server": "3.0.0-rc1-final",
+    "xunit": "2.1.0-*",
+    "xunit.runner.dnx": "2.1.0-*"
+  },
+    "frameworks": {
+      "dnx46": {
+      }
+    },
+    "bundleExclude": [
+        "node_modules",
+        "bower_components",
+        "**.kproj",
+        "**.user",
+        "**.vspscc"
+    ],
+    "exclude": [
+        "wwwroot",
+        "node_modules",
+        "bower_components"
+    ],
+  "commands": {
+    "test": "xunit.runner.dnx",
+    "web": "Microsoft.AspNet.Server.Kestrel"
+  }
+}
